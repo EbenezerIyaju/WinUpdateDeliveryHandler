@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinUpdateDelivery", "WinUpdateDelivery\WinUpdateDelivery.csproj", "{9BCCC681-982A-436D-98D4-A2A163E083BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9BCCC681-982A-436D-98D4-A2A163E083BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BCCC681-982A-436D-98D4-A2A163E083BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BCCC681-982A-436D-98D4-A2A163E083BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BCCC681-982A-436D-98D4-A2A163E083BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {398ADC05-8CB9-484E-888B-A501B607FFB3}
+	EndGlobalSection
+EndGlobal
