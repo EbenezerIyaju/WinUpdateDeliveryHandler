@@ -1,3 +1,4 @@
+using System.ServiceProcess;
 namespace WinUpdateDelivery
 {
     public class DeliveryOptmizationHandler : BackgroundService
@@ -13,8 +14,26 @@ namespace WinUpdateDelivery
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-                await Task.Delay(1000, stoppingToken);
+                // Stop Windows Delivery Optimization service
+                StopService("DoSvc");
+
+                // Stop Windows Update service
+                StopService("wuauserv");
+
+                await Task.Delay(5000, stoppingToken); // Check every 5 seconds
+            }
+        }
+
+        private void StopService(string serviceName)
+        {
+            using (ServiceController service = new ServiceController(serviceName))
+            {
+                if (service.Status != ServiceControllerStatus.Stopped)
+                {
+                    service.Stop();
+                    service.WaitForStatus(ServiceControllerStatus.Stopped, TimeSpan.FromSeconds(5));
+                    _logger.LogInformation($"{serviceName} service stopped.");
+                }
             }
         }
     }
