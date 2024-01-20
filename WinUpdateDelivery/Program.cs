@@ -10,9 +10,9 @@ IHostBuilder builder = Host.CreateDefaultBuilder(args)
     .ConfigureServices((context, services) =>
     {
         LoggerProviderOptions.RegisterProviderOptions<
-            EventLogSettings, EventLogLoggerProvider>(services);
+            EventLogSettings, EventLogLoggerProvider>(services); 
 
-        services.AddHostedService<DeliveryOptmizationHandler>();
+         services.AddHostedService<DeliveryOptmizationHandler>();
     });
 
 IHost host = builder.Build();
